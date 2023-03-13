@@ -14,6 +14,7 @@ public class AuthorController {
     @Autowired
     AuthorService authorService;
 
+    // chnage to DTO
     @PostMapping("/add")
     public String addAuthor(@RequestBody Author author){
 
