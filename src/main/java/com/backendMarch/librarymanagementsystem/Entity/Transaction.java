@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -26,10 +27,12 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     TransactionStatus transactionStatus;
 
-    @CreatedDate
+    @CreationTimestamp
     private Date transactionDate;
 
     private boolean isIssueOperation;
+
+    private String message;
 
     @ManyToOne
     @JoinColumn
